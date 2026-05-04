@@ -1,9 +1,9 @@
 export function Services() {
   const facilities = [
-    { name: "Симметричная кухня", desc: "Наш ресторан относится к гастрономии как к геометрии.", img: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=800&auto=format&fit=crop" },
-    { name: "Структура Spa", desc: "Термальные ванны, встроенные в монолитные каменные ниши.", img: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=800&auto=format&fit=crop" },
-    { name: "Линейный фитнес", desc: "Гребные и силовые тренажеры в кубе со стеклянными стенами.", img: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=800&auto=format&fit=crop" },
-    { name: "Сетки конференций", desc: "Звуконепроницаемые залы заседаний с идеальной акустикой.", img: "https://images.unsplash.com/photo-1517502884422-41eaead166d4?q=80&w=800&auto=format&fit=crop" },
+    { name: "Ресторан", desc: "Завтрак, обед и ужин: европейская кухня и сезонное меню от шеф-повара.", img: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=800&auto=format&fit=crop" },
+    { name: "SPA и wellness", desc: "Сауна, хаммам, бассейн и процедуры для отдыха после дороги или рабочего дня.", img: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=800&auto=format&fit=crop" },
+    { name: "Фитнес-зал", desc: "Кардио и силовые тренажёры, свободный доступ для гостей отеля.", img: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=800&auto=format&fit=crop" },
+    { name: "Конференц-залы", desc: "Залы для переговоров и мероприятий с проектором, Wi‑Fi и обслуживанием кофе-брейков.", img: "https://images.unsplash.com/photo-1517502884422-41eaead166d4?q=80&w=800&auto=format&fit=crop" },
   ];
 
   return (
@@ -42,8 +42,8 @@ export function Gallery() {
 
   return (
     <div className="grid-container py-16">
-       <h1 className="text-4xl tracking-widest text-center mb-6 uppercase">Визуальные записи</h1>
-       <p className="text-center font-light text-zinc-500 mb-12 text-sm md:text-base">Архитектурная чистота и симметрия в каждой детали.</p>
+       <h1 className="text-4xl tracking-widest text-center mb-6 uppercase">Галерея</h1>
+       <p className="text-center font-light text-zinc-500 mb-12 text-sm md:text-base">Номера, общие зоны и вид на город.</p>
        
        <div className="flex justify-center gap-2 md:gap-4 mb-12 flex-wrap">
           <button className="border border-black px-4 md:px-6 py-2 text-[10px] md:text-xs uppercase tracking-widest bg-black text-white font-semibold">Все</button>
@@ -74,13 +74,13 @@ export function Gallery() {
 export function Offers() {
   return (
     <div className="grid-container py-16">
-       <h1 className="text-4xl tracking-widest text-center mb-4 uppercase">Специальные структуры</h1>
-       <p className="text-center font-light text-zinc-500 mb-16 text-sm md:text-base">Эксклюзивные предложения для наших взыскательных гостей.</p>
+       <h1 className="text-4xl tracking-widest text-center mb-4 uppercase">Специальные предложения</h1>
+       <p className="text-center font-light text-zinc-500 mb-16 text-sm md:text-base">Выгодные пакеты и сезонные акции для гостей отеля.</p>
 
        <div className="flex flex-col gap-12 max-w-4xl mx-auto">
           {[
-            { tag: "Сезонное", title: "Осенняя симметрия", desc: "Скидка 20% на все выравнивания форм во время равноденствия. Включает геометрический завтрак.", btn: "Применить" },
-            { tag: "Длительное", title: "7-Дневная Ось", desc: "Оставайтесь семь дней подряд для достижения идеальной рутины. Включает доступ к структуре Spa.", btn: "Забронировать Ось" },
+            { tag: "Сезон", title: "Осень в городе", desc: "Скидка 20% на проживание при заезде в будние дни. Завтрак включён.", btn: "Узнать условия" },
+            { tag: "Долгий отдых", title: "Неделя в отеле", desc: "При бронировании от 7 ночей — бесплатный поздний выезд и доступ в SPA.", btn: "Забронировать" },
           ].map((offer, i) => (
             <div key={i} className="border border-black flex flex-col sm:flex-row relative bg-white shadow-md hover:shadow-lg transition-shadow">
               <div className="w-full sm:w-1/3 min-h-[150px] sm:min-h-full bg-zinc-800 border-b sm:border-b-0 sm:border-r border-black flex items-center justify-center p-8 relative overflow-hidden">
@@ -103,15 +103,15 @@ export function Offers() {
 
 export function Dining() {
   const menu = [
-    { name: "Сферический Тартар", desc: "Идеальная сфера из свежайшего тунца с эмульсией.", price: "2 400 ₽" },
-    { name: "Кубический Стейк", desc: "Говядина су-вид, нарезанная точными кубами, с линейным пюре.", price: "4 200 ₽" },
-    { name: "Линейный Десерт", desc: "Шоколадный ганаш в форме идеального параллелепипеда.", price: "1 100 ₽" },
+    { name: "Тартар из тунца", desc: "С авокадо, лаймом и микрозеленью.", price: "2 400 ₽" },
+    { name: "Стейк из говядины", desc: "Су-вид, подаётся с картофельным пюре и соусом.", price: "4 200 ₽" },
+    { name: "Шоколадный десерт", desc: "Ганаш, ягоды и мороженое.", price: "1 100 ₽" },
   ];
 
   return (
     <div className="grid-container py-16">
-      <h1 className="text-4xl tracking-widest text-center mb-6 uppercase">Гастрономическая Геометрия</h1>
-      <p className="text-center font-light text-zinc-500 mb-16 max-w-2xl mx-auto text-sm md:text-base">Наш ресторан возводит кулинарию в ранг точной науки. Форма и содержание находятся в идеальном балансе.</p>
+      <h1 className="text-4xl tracking-widest text-center mb-6 uppercase">Ресторан отеля</h1>
+      <p className="text-center font-light text-zinc-500 mb-16 max-w-2xl mx-auto text-sm md:text-base">Завтрак для гостей, обед и ужин: европейская кухня и вино из карты сомелье.</p>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-24">
         <div className="border border-black p-2 bg-white">
@@ -131,7 +131,7 @@ export function Dining() {
             ))}
           </div>
           <button className="bg-black text-white px-8 py-4 uppercase text-xs tracking-widest font-bold hover:bg-gold transition-strict mt-4">
-            Резерв стола
+            Забронировать стол
           </button>
         </div>
       </div>

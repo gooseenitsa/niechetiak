@@ -13,9 +13,9 @@ export function Home() {
           className="absolute inset-0 w-full h-full object-cover opacity-50 grayscale hover:grayscale-0 transition-all duration-1000"
         />
         <div className="relative z-10 text-center flex flex-col items-center">
-          <h1 className="text-white text-5xl md:text-7xl tracking-[0.2em] mb-6 drop-shadow-lg uppercase px-4">Чистая структура.</h1>
+          <h1 className="text-white text-5xl md:text-7xl tracking-[0.2em] mb-6 drop-shadow-lg uppercase px-4">Nieche Tiak</h1>
           <p className="text-zinc-200 text-sm md:text-lg uppercase tracking-widest mb-12 max-w-xl font-light drop-shadow-md px-4">
-            Бескомпромиссный отдых, определяемый чистой геометрией и безупречным сервисом.
+            Отель в центре города: уютные номера, ресторан и SPA для отдыха и деловых поездок.
           </p>
           <Link to="/booking" className="bg-white text-black px-12 py-4 uppercase tracking-[0.2em] text-sm font-semibold hover:bg-gold hover:text-white transition-strict border border-transparent hover:border-gold">
             Забронировать номер
@@ -88,15 +88,15 @@ export function Home() {
              <img src="https://images.unsplash.com/photo-1551882547-ff40c0d129df?q=80&w=800&auto=format&fit=crop" alt="Services" className="w-full h-full object-cover grayscale" />
           </div>
           <div className="flex flex-col items-start text-left">
-            <span className="text-gold uppercase tracking-widest text-xs font-bold mb-4">Философия</span>
-            <h2 className="text-3xl lg:text-4xl mb-6 tracking-widest leading-tight uppercase">Высокий уровень <br/>через строгий порядок</h2>
+            <span className="text-gold uppercase tracking-widest text-xs font-bold mb-4">О нас</span>
+            <h2 className="text-3xl lg:text-4xl mb-6 tracking-widest leading-tight uppercase">Комфорт и сервис <br/>для каждого гостя</h2>
             <p className="text-zinc-600 font-light mb-8 leading-relaxed">
-              Каждый угол в Nieche Tiak рассчитан так, чтобы дарить покой. Мы верим, что симметричное окружение культивирует ментальное спокойствие. От наших выверенных гастрономических впечатлений до структурированной безмятежности нашей Spa-зоны — совершенство является нашей основой.
+              Nieche Tiak — это спокойные номера, внимательный персонал и всё необходимое для отдыха: ресторан с завтраком, SPA и бассейн, залы для встреч и мероприятий. Мы стараемся, чтобы вы чувствовали себя как дома.
             </p>
             <div className="grid grid-cols-2 gap-y-4 gap-x-4 lg:gap-x-0 mb-10 w-full text-xs lg:text-sm font-medium uppercase tracking-widest border-l-2 border-gold pl-6">
-               <div>Изысканная кухня</div>
-               <div>Минималистичный Spa</div>
-               <div>Геометричный бассейн</div>
+               <div>Ресторан</div>
+               <div>SPA и wellness</div>
+               <div>Бассейн</div>
                <div>Конференц-залы</div>
             </div>
             <Link to="/services" className="px-8 py-4 bg-black text-white hover:bg-zinc-800 uppercase text-sm tracking-widest transition-strict text-center w-full sm:w-auto">
@@ -111,9 +111,9 @@ export function Home() {
         <h2 className="text-3xl mb-16 tracking-widest uppercase">Отзывы</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
            {[
-             { name: "А. Мерсер", text: "Архитектурная чистота не имеет себе равных. Безупречный отдых." },
-             { name: "Дж. Вэнс", text: "Каждая деталь математически совершенна, в сочетании с теплым и точным сервисом." },
-             { name: "Э. Руссо", text: "Храм модернизма. Я никогда не чувствовал себя таким собранным и расслабленным." }
+             { name: "Алексей М.", text: "Чистые номера, тихий дворик, завтрак отличный. Обязательно вернёмся." },
+             { name: "Джеймс В.", text: "Удобное расположение и внимательный персонал. Идеально для командировки." },
+             { name: "Елена Р.", text: "SPA после долгого перелёта спас ситуацию. Рекомендую отель друзьям." }
            ].map((r, i) => (
              <div key={i} className="border border-zinc-200 p-8 lg:p-10 flex flex-col items-center">
                <div className="flex gap-1 text-gold mb-6">
@@ -134,17 +134,17 @@ export function About() {
     <div className="py-16 grid-container text-center max-w-4xl px-4">
       <h1 className="text-4xl tracking-widest mb-8 uppercase">О нас</h1>
       <p className="mb-6 font-light leading-relaxed text-zinc-600">
-        Отель Nieche Tiak был основан на философии, согласно которой пространственная чистота диктует возвышенный опыт. 
-        Построенное в 2024 году, наше здание является данью уважения минималистичному модернистскому движению, отвергая все ненужные украшения, чтобы обеспечить отдых, ориентированный исключительно на форму, функцию и безупречный сервис.
+        Nieche Tiak — современный отель в центре города. Мы предлагаем комфортабельные номера, ресторан, SPA и залы для мероприятий.
+        Наша цель — чтобы гость чувствовал себя спокойно и уверенно, от заезда до выезда.
       </p>
       <div className="my-16 grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
          <div className="border border-zinc-200 p-8 space-y-4">
-           <h3 className="tracking-widest uppercase font-bold text-sm">Наша концепция</h3>
-           <p className="font-light text-sm text-zinc-600 leading-relaxed">Каждая комната спроектирована на основе идеальной сетки, обеспечивающей симметричные линии обзора, которые подсознательно снижают стресс.</p>
+           <h3 className="tracking-widest uppercase font-bold text-sm">Номера</h3>
+           <p className="font-light text-sm text-zinc-600 leading-relaxed">Продуманная планировка, качественный матрас, рабочее место и всё для отдыха после дороги или делового дня.</p>
          </div>
          <div className="border border-zinc-200 p-8 space-y-4">
-           <h3 className="tracking-widest uppercase font-bold text-sm">Наш сервис</h3>
-           <p className="font-light text-sm text-zinc-600 leading-relaxed">Предсказуемо, точно и ненавязчиво. Мы предоставляем именно то, что вам нужно, геометрически согласовываясь с вашим графиком.</p>
+           <h3 className="tracking-widest uppercase font-bold text-sm">Сервис</h3>
+           <p className="font-light text-sm text-zinc-600 leading-relaxed">Круглосуточная стойка регистрации, помощь с бронированием и трансфером, хранение багажа и ответы на любые вопросы о городе.</p>
          </div>
       </div>
       
@@ -160,10 +160,10 @@ export function About() {
                <p><strong className="text-black">Email:</strong> info@niechetiak.com</p>
             </div>
             <form className="space-y-4 mt-8 pt-8 border-t border-zinc-200 flex flex-col">
-               <input className="w-full border border-black p-3 font-sans outline-none text-sm focus:border-gold transition-colors" placeholder="ВАШЕ ИМЯ" />
-               <input className="w-full border border-black p-3 font-sans outline-none text-sm focus:border-gold transition-colors" placeholder="ВАШ EMAIL" />
-               <textarea className="w-full border border-black p-3 font-sans outline-none text-sm focus:border-gold min-h-[120px] resize-y transition-colors" placeholder="СООБЩЕНИЕ"></textarea>
-               <button className="bg-black text-white uppercase tracking-widest text-sm px-8 py-4 hover:bg-gold transition-strict font-semibold">Отправить форму</button>
+               <input className="w-full border border-black p-3 font-sans outline-none text-sm focus:border-gold transition-colors" placeholder="Ваше имя" />
+               <input className="w-full border border-black p-3 font-sans outline-none text-sm focus:border-gold transition-colors" placeholder="Email" />
+               <textarea className="w-full border border-black p-3 font-sans outline-none text-sm focus:border-gold min-h-[120px] resize-y transition-colors" placeholder="Сообщение"></textarea>
+               <button className="bg-black text-white uppercase tracking-widest text-sm px-8 py-4 hover:bg-gold transition-strict font-semibold">Отправить</button>
             </form>
          </div>
       </div>
@@ -175,16 +175,16 @@ export function NotFound() {
   return (
     <div className="min-h-[70vh] flex flex-col items-center justify-center text-center px-4">
       <h1 className="text-9xl font-display tracking-widest text-zinc-200 mb-4 select-none">404</h1>
-      <h2 className="text-2xl lg:text-3xl uppercase tracking-widest mb-6">Структурная аномалия</h2>
+      <h2 className="text-2xl lg:text-3xl uppercase tracking-widest mb-6">Страница не найдена</h2>
       <p className="text-zinc-500 font-light mb-12 max-w-sm">
-        Координата, к которой вы пытаетесь получить доступ, не существует в нашей текущей архитектурной сетке.
+        Такой страницы нет. Проверьте адрес или вернитесь на главную.
       </p>
       <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
         <Link to="/" className="w-full sm:w-auto border border-black px-8 py-4 text-sm uppercase tracking-widest hover:bg-black hover:text-white transition-strict font-semibold">
           На главную
         </Link>
         <Link to="/rooms" className="w-full sm:w-auto bg-black text-white px-8 py-4 text-sm uppercase tracking-widest hover:bg-gold transition-strict font-semibold">
-          В каталог
+          К номерам
         </Link>
       </div>
     </div>
@@ -195,23 +195,23 @@ export function FAQ() {
   const faqs = [
     {
       q: "Каковы правила отмены бронирования?",
-      a: "Аннулирование без штрафа возможно за 72 часа до времени заезда (14:00). При поздней отмене удерживается стоимость одной ночи."
+      a: "Отмена без штрафа — не позднее чем за 72 часа до заезда (стандартное время заезда 14:00). При более поздней отмене может удерживаться стоимость одной ночи — уточняйте при бронировании."
     },
     {
       q: "Предоставляете ли вы трансфер из аэропорта?",
-      a: "Да, мы предоставляем симметричный трансфер на премиальных автомобилях. Требуется предварительное уведомление за 24 часа."
+      a: "Да, закажите трансфер из аэропорта или вокзала у администратора не позднее чем за 24 часа до прибытия."
     },
     {
       q: "Допускается ли размещение с домашними животными?",
-      a: "В целях поддержания гипоаллергенной среды и структурной чистоты, размещение с животными не предусмотрено."
+      a: "К сожалению, размещение с животными не предусмотрено — так мы поддерживаем комфорт для всех гостей с аллергией."
     },
     {
-      q: "Есть ли дресс-код в ресторане 'Симметричная кухня'?",
-      a: "Мы приветствуем стиль smart casual. Минималистичный и элегантный внешний вид идеально дополняет атмосферу."
+      q: "Есть ли дресс-код в ресторане отеля?",
+      a: "Да, в вечернее время мы просим соблюдать smart casual: аккуратная одежда без пляжной обуви и спортивных костюмов."
     },
     {
-      q: "Какие часы работы Spa-структуры?",
-      a: "Термальные зоны и фитнес-куб открыты ежедневно с 06:00 до 23:00. Индивидуальные процедуры требуют предварительной записи."
+      q: "Какие часы работы SPA и фитнеса?",
+      a: "Бассейн, сауна и тренажёрный зал открыты ежедневно с 6:00 до 23:00. На массаж и процедуры нужна предварительная запись."
     }
   ];
 
@@ -219,8 +219,8 @@ export function FAQ() {
 
   return (
     <div className="grid-container py-16 min-h-[80vh] max-w-4xl mx-auto">
-      <h1 className="text-4xl tracking-widest text-center mb-6 uppercase">Протокол Частых Вопросов</h1>
-      <p className="text-center font-light text-zinc-500 mb-16 text-sm md:text-base">Стандартизированные ответы для оптимизации вашего времени.</p>
+      <h1 className="text-4xl tracking-widest text-center mb-6 uppercase">Частые вопросы</h1>
+      <p className="text-center font-light text-zinc-500 mb-16 text-sm md:text-base">Ответы на типичные вопросы гостей перед бронированием и заездом.</p>
 
       <div className="space-y-4">
         {faqs.map((faq, idx) => (

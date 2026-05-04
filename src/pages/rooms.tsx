@@ -2,11 +2,11 @@ import { Link } from "react-router-dom";
 import { Coffee, Monitor, Wifi, Wind } from "lucide-react";
 
 const mockRooms = [
-  { id: "1", type: "Стандартный номер", price: 250, size: 30, guests: 2, image: "https://images.unsplash.com/photo-1618773928121-c32242e63f39?q=80&w=800&auto=format&fit=crop" },
-  { id: "2", type: "Семейный массив", price: 450, size: 55, guests: 4, image: "https://images.unsplash.com/photo-1590490360182-c33d57733427?q=80&w=800&auto=format&fit=crop" },
-  { id: "3", type: "Ось роскоши (Люкс)", price: 800, size: 90, guests: 2, image: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=800&auto=format&fit=crop" },
-  { id: "4", type: "Представительский грид", price: 350, size: 40, guests: 2, image: "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?q=80&w=800&auto=format&fit=crop" },
-  { id: "5", type: "Панорамный квадрат", price: 600, size: 70, guests: 3, image: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?q=80&w=800&auto=format&fit=crop" },
+  { id: "1", type: "Номер Стандарт", price: 250, size: 30, guests: 2, image: "https://images.unsplash.com/photo-1618773928121-c32242e63f39?q=80&w=800&auto=format&fit=crop" },
+  { id: "2", type: "Семейный номер", price: 450, size: 55, guests: 4, image: "https://images.unsplash.com/photo-1590490360182-c33d57733427?q=80&w=800&auto=format&fit=crop" },
+  { id: "3", type: "Люкс", price: 800, size: 90, guests: 2, image: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=800&auto=format&fit=crop" },
+  { id: "4", type: "Представительский номер", price: 350, size: 40, guests: 2, image: "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?q=80&w=800&auto=format&fit=crop" },
+  { id: "5", type: "Номер с панорамным видом", price: 600, size: 70, guests: 3, image: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?q=80&w=800&auto=format&fit=crop" },
 ];
 
 export function Rooms() {
@@ -14,8 +14,8 @@ export function Rooms() {
     <div className="grid-container py-16">
       <div className="flex flex-col md:flex-row justify-between items-end mb-12 border-b border-zinc-200 pb-8">
         <div>
-          <h1 className="text-4xl tracking-widest mb-4 uppercase">Каталог номеров</h1>
-          <p className="text-zinc-500 font-light text-sm md:text-base">Исследуйте наши идеально пропорциональные жилые пространства.</p>
+          <h1 className="text-4xl tracking-widest mb-4 uppercase">Номера</h1>
+          <p className="text-zinc-500 font-light text-sm md:text-base">Выберите категорию номера и забронируйте онлайн.</p>
         </div>
         <div className="flex items-center gap-4 mt-6 md:mt-0 w-full md:w-auto">
           <span className="text-xs uppercase tracking-widest text-zinc-400 whitespace-nowrap">Фильтр:</span>
@@ -47,14 +47,14 @@ export function Rooms() {
                 <span>ДО {room.guests} ГОСТЕЙ</span>
               </div>
               <p className="font-light text-sm text-zinc-600 mb-8 line-clamp-3 leading-relaxed">
-                Тщательно продуманная пространственная организация, обеспечивающая комфорт без визуального шума. Включает геометричную мебель и нейтральные тона.
+                Уютный интерьер, удобная кровать, рабочая зона, кондиционер и бесплатный Wi‑Fi. Идеально для отдыха и работы в поездке.
               </p>
               <div className="mt-auto grid grid-cols-2 gap-4">
                 <Link to={`/rooms/${room.id}`} className="bg-white border border-black text-black px-4 py-4 uppercase tracking-widest text-[10px] hover:bg-black hover:text-white transition-strict text-center font-bold">
                   Детали
                 </Link>
                 <Link to={`/booking?room=${room.id}`} className="bg-black border border-black text-white px-4 py-4 uppercase tracking-widest text-[10px] hover:bg-gold hover:border-gold transition-strict text-center font-bold shadow-sm">
-                  Бронь
+                  Забронировать
                 </Link>
               </div>
             </div>
@@ -69,7 +69,7 @@ export function RoomDetail() {
   return (
     <div className="grid-container py-16">
       <Link to="/rooms" className="text-xs uppercase tracking-widest text-zinc-500 hover:text-black transition-strict flex items-center gap-2 mb-8 inline-flex">
-        <span>&larr;</span> Назад в каталог
+        <span>&larr;</span> К списку номеров
       </Link>
       
       <div className="flex flex-col lg:flex-row gap-12 xl:gap-16">
@@ -87,7 +87,7 @@ export function RoomDetail() {
 
         {/* Info Column */}
         <div className="w-full lg:w-1/3 flex flex-col">
-           <h1 className="text-3xl tracking-widest mb-2 uppercase">Ось роскоши (Люкс)</h1>
+           <h1 className="text-3xl tracking-widest mb-2 uppercase">Люкс</h1>
            <p className="text-3xl text-gold font-sans font-light mb-8">$800 <span className="text-sm text-zinc-400 font-sans tracking-widest uppercase">/ ночь</span></p>
            
            <div className="border-y border-zinc-200 py-6 mb-8 grid grid-cols-2 gap-y-6 gap-x-2 text-xs font-semibold tracking-widest uppercase items-center">
@@ -98,13 +98,13 @@ export function RoomDetail() {
            </div>
 
            <p className="text-zinc-600 font-light leading-relaxed mb-10 text-sm">
-             Наша наиболее выверенная пространственная компоновка. Люкс предлагает панорамные виды, жесткие архитектурные границы и монолитную кровать, структурированную для оптимального выравнивания позвоночника и глубокого отдыха.
+             Просторный люкс с панорамными окнами, отдельной гостиной и большой кроватью king size. Подходит для романтического отдыха или деловой поездки высокого уровня.
            </p>
 
            <div className="mb-12">
               <h4 className="text-xs uppercase tracking-widest font-bold mb-6 border-b border-zinc-200 pb-2">Удобства</h4>
               <ul className="space-y-4">
-                 <li className="flex items-center gap-4 text-sm text-zinc-600 font-light"><Wifi className="w-4 h-4 text-black" /> Структурированный Wi-Fi</li>
+                 <li className="flex items-center gap-4 text-sm text-zinc-600 font-light"><Wifi className="w-4 h-4 text-black" /> Бесплатный Wi‑Fi</li>
                  <li className="flex items-center gap-4 text-sm text-zinc-600 font-light"><Wind className="w-4 h-4 text-black" /> Точный климат-контроль</li>
                  <li className="flex items-center gap-4 text-sm text-zinc-600 font-light"><Coffee className="w-4 h-4 text-black" /> Крафтовый мини-бар</li>
                  <li className="flex items-center gap-4 text-sm text-zinc-600 font-light"><Monitor className="w-4 h-4 text-black" /> Встроенный Smart TV</li>
@@ -112,7 +112,7 @@ export function RoomDetail() {
            </div>
 
            <Link to="/booking?room=3" className="w-full bg-black text-white text-center py-5 uppercase tracking-widest hover:bg-gold transition-strict font-bold text-xs shadow-lg mt-auto">
-              Забронировать геометрию
+              Забронировать номер
            </Link>
         </div>
       </div>
@@ -161,14 +161,14 @@ export function Booking() {
                     <label className="flex items-center justify-between p-6 border border-zinc-200 cursor-pointer hover:border-black transition-strict bg-white shadow-sm">
                        <div className="flex items-center gap-4">
                           <input type="checkbox" className="w-5 h-5 accent-black cursor-pointer" />
-                          <span className="text-xs sm:text-sm font-semibold tracking-widest uppercase">Завтрак (по форме)</span>
+                          <span className="text-xs sm:text-sm font-semibold tracking-widest uppercase">Завтрак «шведский стол»</span>
                        </div>
                        <span className="text-gold font-mono text-sm">+$35 <span className="text-xs text-zinc-400">/ ДЕНЬ</span></span>
                     </label>
                     <label className="flex items-center justify-between p-6 border border-zinc-200 cursor-pointer hover:border-black transition-strict bg-white shadow-sm">
                        <div className="flex items-center gap-4">
                           <input type="checkbox" className="w-5 h-5 accent-black cursor-pointer" />
-                          <span className="text-xs sm:text-sm font-semibold tracking-widest uppercase">Трансфер (Ось Аэропорт)</span>
+                          <span className="text-xs sm:text-sm font-semibold tracking-widest uppercase">Трансфер аэропорт — отель</span>
                        </div>
                        <span className="text-gold font-mono text-sm">+$80 <span className="text-xs text-zinc-400">РАЗОВО</span></span>
                     </label>
@@ -181,7 +181,7 @@ export function Booking() {
                <h3 className="tracking-widest uppercase text-center border-b border-zinc-300 pb-4 mb-6 text-sm font-bold">Итоговый расчет</h3>
                
                <div className="flex justify-between items-center mb-6">
-                  <span className="font-semibold uppercase tracking-widest text-sm">Ось роскоши</span>
+                  <span className="font-semibold uppercase tracking-widest text-sm">Люкс</span>
                   <button className="text-[10px] text-zinc-500 underline uppercase tracking-widest hover:text-black">Изменить</button>
                </div>
                

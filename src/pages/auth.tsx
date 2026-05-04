@@ -12,8 +12,8 @@ export function Login() {
       <div className="min-h-[80vh] flex items-center justify-center py-16 px-4">
          <Card className="w-full max-w-md shadow-2xl p-4 md:p-8">
             <CardHeader className="border-b-0 pb-0 items-center text-center mb-10">
-               <CardTitle>Доступ к сетке</CardTitle>
-               <CardDescription className="uppercase tracking-widest text-xs md:text-sm mt-2">Введите учетные координаты.</CardDescription>
+               <CardTitle>Вход в аккаунт</CardTitle>
+               <CardDescription className="uppercase tracking-widest text-xs md:text-sm mt-2">Введите email и пароль, чтобы войти.</CardDescription>
             </CardHeader>
             <CardContent>
                <form className="space-y-6">
@@ -24,19 +24,19 @@ export function Login() {
                   <div className="space-y-2 flex flex-col">
                      <div className="flex justify-between items-center">
                         <Label>Пароль</Label>
-                        <a href="#" className="text-xs text-gold hover:underline">Восстановить</a>
+                        <a href="#" className="text-xs text-gold hover:underline">Забыли пароль?</a>
                      </div>
                      <Input type="password" />
                   </div>
 
                   <Button className="w-full mt-4">
-                     Инициализировать сессию
+                     Войти
                   </Button>
                </form>
             </CardContent>
             <CardFooter className="pt-8 border-t border-zinc-200 justify-center">
                <div className="text-[10px] md:text-xs uppercase tracking-widest text-zinc-500">
-                  Нет профиля? <Link to="/signup" className="text-black font-bold ml-2">Сформировать</Link>
+                  Нет аккаунта? <Link to="/signup" className="text-black font-bold ml-2">Зарегистрироваться</Link>
                </div>
             </CardFooter>
          </Card>
@@ -49,8 +49,8 @@ export function Signup() {
       <div className="min-h-[80vh] flex items-center justify-center py-16 px-4">
          <Card className="w-full max-w-xl shadow-2xl p-4 md:p-8">
             <CardHeader className="border-b-0 pb-0 items-center text-center mb-10">
-               <CardTitle>Конструкт лояльности</CardTitle>
-               <CardDescription className="uppercase tracking-widest text-xs md:text-sm mt-2">Создайте новый массив идентичности.</CardDescription>
+               <CardTitle>Регистрация</CardTitle>
+               <CardDescription className="uppercase tracking-widest text-xs md:text-sm mt-2">Создайте аккаунт для бронирования и управления заказами.</CardDescription>
             </CardHeader>
             <CardContent>
                <form className="space-y-6">
@@ -69,18 +69,18 @@ export function Signup() {
                      <Input type="email" />
                   </div>
                   <div className="space-y-2 flex flex-col">
-                     <Label>Ключ безопасности (Пароль)</Label>
+                     <Label>Пароль</Label>
                      <Input type="password" />
                   </div>
 
                   <Button className="w-full mt-4">
-                     Создать профиль
+                     Зарегистрироваться
                   </Button>
                </form>
             </CardContent>
             <CardFooter className="pt-8 border-t border-zinc-200 justify-center">
                <div className="text-[10px] md:text-xs uppercase tracking-widest text-zinc-500">
-                  Профиль существует? <Link to="/login" className="text-black font-bold ml-2">Войти</Link>
+                  Уже есть аккаунт? <Link to="/login" className="text-black font-bold ml-2">Войти</Link>
                </div>
             </CardFooter>
          </Card>
@@ -92,15 +92,15 @@ export function Account() {
    const navigate = useNavigate();
    return (
       <div className="grid-container py-16 min-h-[70vh]">
-         <h1 className="text-4xl tracking-widest mb-12 border-b border-black pb-6 uppercase">Личный пульт: <span className="font-light text-zinc-500">А. МЕРСЕР</span></h1>
+         <h1 className="text-4xl tracking-widest mb-12 border-b border-black pb-6 uppercase">Личный кабинет <span className="font-light text-zinc-500">Алексей Мерсер</span></h1>
 
          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             {/* Sidebar */}
             <div className="col-span-1 space-y-3 font-sans text-xs font-bold uppercase tracking-widest sticky top-24 h-fit">
-               <a href="#history" className="block w-full text-left p-4 md:p-5 border border-zinc-200 hover:border-black text-zinc-600 hover:text-black transition-all bg-white">История и логи</a>
-               <a href="#profile" className="block w-full text-left p-4 md:p-5 border border-zinc-200 hover:border-black text-zinc-600 hover:text-black transition-all bg-white">Настройки профиля</a>
-               <a href="#payment" className="block w-full text-left p-4 md:p-5 border border-zinc-200 hover:border-black text-zinc-600 hover:text-black transition-all bg-white">Методы оплаты</a>
-               <button className="w-full text-left p-4 md:p-5 border border-zinc-200 hover:text-red-500 transition-all mt-12 bg-white font-medium">Прервать сессию (Выйти)</button>
+               <a href="#history" className="block w-full text-left p-4 md:p-5 border border-zinc-200 hover:border-black text-zinc-600 hover:text-black transition-all bg-white">Мои бронирования</a>
+               <a href="#profile" className="block w-full text-left p-4 md:p-5 border border-zinc-200 hover:border-black text-zinc-600 hover:text-black transition-all bg-white">Профиль</a>
+               <a href="#payment" className="block w-full text-left p-4 md:p-5 border border-zinc-200 hover:border-black text-zinc-600 hover:text-black transition-all bg-white">Способы оплаты</a>
+               <button className="w-full text-left p-4 md:p-5 border border-zinc-200 hover:text-red-500 transition-all mt-12 bg-white font-medium">Выйти</button>
             </div>
 
             {/* Main Panel */}
@@ -111,7 +111,7 @@ export function Account() {
                   <div className="border border-black p-8 md:p-10 flex flex-col md:flex-row justify-between items-center bg-stone-light shadow-inner">
                      <div className="mb-6 md:mb-0 text-center md:text-left">
                         <h3 className="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-zinc-500 mb-2">Уровень лояльности</h3>
-                        <div className="text-2xl sm:text-3xl font-display font-bold tracking-[0.2em] text-gold drop-shadow-sm uppercase">Золотая Ось</div>
+                        <div className="text-2xl sm:text-3xl font-display font-bold tracking-[0.2em] text-gold drop-shadow-sm uppercase">Золотой уровень</div>
                      </div>
                      <div className="text-center md:text-right">
                         <h3 className="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-zinc-500 mb-2">Накопленные баллы</h3>
@@ -121,7 +121,7 @@ export function Account() {
 
                   {/* Bookings */}
                   <div>
-                     <h2 className="text-xl tracking-widest border-b border-zinc-200 pb-4 mb-6 uppercase">Запланированные визиты</h2>
+                     <h2 className="text-xl tracking-widest border-b border-zinc-200 pb-4 mb-6 uppercase">Предстоящие бронирования</h2>
 
                      <div className="border border-zinc-200 p-6 flex flex-col sm:flex-row justify-between items-center hover:border-black transition-all bg-white shadow-sm hover:shadow-md">
                         <div className="flex flex-col sm:flex-row items-center sm:gap-8 mb-6 sm:mb-0 w-full text-center sm:text-left">
@@ -130,8 +130,8 @@ export function Account() {
                               <span className="text-3xl font-bold font-sans">12</span>
                            </div>
                            <div>
-                              <h4 className="font-bold tracking-widest uppercase mb-2 text-lg">Ось роскоши</h4>
-                              <p className="text-xs text-zinc-500 font-mono tracking-widest">Подтверждение: #NT-88902A</p>
+                              <h4 className="font-bold tracking-widest uppercase mb-2 text-lg">Люкс</h4>
+                              <p className="text-xs text-zinc-500 font-mono tracking-widest">Номер бронирования: #NT-88902A</p>
                            </div>
                         </div>
                         <Button 
@@ -139,7 +139,7 @@ export function Account() {
                            onClick={() => navigate('/account/booking/NT-88902A')} 
                            className="w-full sm:w-auto px-8 py-3 whitespace-nowrap"
                         >
-                           Модулировать
+                           Изменить бронирование
                         </Button>
                      </div>
                   </div>
@@ -152,7 +152,7 @@ export function Account() {
                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                         <div className="space-y-2 flex flex-col">
                           <Label>Имя</Label>
-                          <Input defaultValue="Алекс" />
+                          <Input defaultValue="Алексей" />
                         </div>
                         <div className="space-y-2 flex flex-col">
                           <Label>Фамилия</Label>
@@ -177,7 +177,7 @@ export function Account() {
 
                {/* Payment Methods */}
                <div id="payment" className="scroll-mt-24">
-                  <h2 className="text-xl tracking-widest border-b border-zinc-200 pb-4 mb-6 uppercase">Методы оплаты</h2>
+                  <h2 className="text-xl tracking-widest border-b border-zinc-200 pb-4 mb-6 uppercase">Способы оплаты</h2>
                   
                   <div className="space-y-4 mb-8">
                      {/* Saved card 1 */}
@@ -218,7 +218,7 @@ export function Account() {
 
                   <Button variant="secondary" className="w-full flex items-center gap-3 border-dashed h-16 text-zinc-500">
                      <Plus className="w-5 h-5" />
-                     Добавить новый метод
+                     Добавить карту
                   </Button>
                </div>
 
@@ -234,13 +234,13 @@ export function EditBooking() {
    return (
       <div className="grid-container py-16 min-h-[80vh]">
          <button onClick={() => navigate(-1)} className="flex items-center gap-2 text-xs uppercase tracking-widest font-bold hover:text-gold transition-colors mb-12 text-zinc-500">
-            <ArrowLeft className="w-4 h-4" /> Назад к профилю
+            <ArrowLeft className="w-4 h-4" /> Назад в личный кабинет
          </button>
          
          <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 border-b border-black pb-6 gap-4">
             <div>
-               <h1 className="text-3xl md:text-4xl tracking-widest uppercase">Модуляция брони</h1>
-               <p className="text-zinc-500 mt-2 font-mono tracking-widest text-sm uppercase">#NT-88902A</p>
+               <h1 className="text-3xl md:text-4xl tracking-widest uppercase">Изменение бронирования</h1>
+               <p className="text-zinc-500 mt-2 font-mono tracking-widest text-sm uppercase">Номер: #NT-88902A</p>
             </div>
             <Badge variant="default" className="gap-2 h-8 px-4 text-[10px]">
                <CheckCircle className="w-3 h-3 text-gold" /> Подтверждено
@@ -251,7 +251,7 @@ export function EditBooking() {
             <div className="lg:col-span-2 space-y-12">
                {/* Current Configuration */}
                <section>
-                  <h2 className="text-xl tracking-widest uppercase border-b border-zinc-200 pb-4 mb-6">Текущая конфигурация</h2>
+                  <h2 className="text-xl tracking-widest uppercase border-b border-zinc-200 pb-4 mb-6">Детали бронирования</h2>
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
                      <div className="border border-zinc-200 p-6 bg-white flex flex-col justify-center shadow-sm">
                         <Calendar className="w-6 h-6 mb-4 text-zinc-400" />
@@ -269,28 +269,28 @@ export function EditBooking() {
                         <Clock className="w-6 h-6 mb-4 text-zinc-400" />
                         <h3 className="text-[10px] uppercase tracking-widest text-zinc-500 font-bold mb-1">Заезд</h3>
                         <p className="font-sans text-sm font-semibold">14:00</p>
-                        <button className="text-xs text-gold uppercase tracking-widest font-bold mt-4 text-left hover:text-black transition-colors">Опции</button>
+                        <button className="text-xs text-gold uppercase tracking-widest font-bold mt-4 text-left hover:text-black transition-colors">Изменить</button>
                      </div>
                   </div>
                </section>
                
                {/* Services */}
                <section>
-                  <h2 className="text-xl tracking-widest uppercase border-b border-zinc-200 pb-4 mb-6">Дополнительные модули</h2>
+                  <h2 className="text-xl tracking-widest uppercase border-b border-zinc-200 pb-4 mb-6">Дополнительные услуги</h2>
                   <div className="space-y-4">
                      <label className="flex items-start gap-4 p-6 border border-zinc-200 bg-white cursor-pointer hover:border-black transition-colors group">
                         <Checkbox className="mt-1" defaultChecked id="service-1" />
                         <div className="flex-1">
-                           <Label htmlFor="service-1" className="text-sm cursor-pointer group-hover:text-black">Геометрический Завтрак</Label>
-                           <span className="block text-xs font-light text-zinc-500 mt-2">Ежедневная доставка в номер точно в 08:00.</span>
+                           <Label htmlFor="service-1" className="text-sm cursor-pointer group-hover:text-black">Завтрак в номер</Label>
+                           <span className="block text-xs font-light text-zinc-500 mt-2">Ежедневная подача завтрака в номер с 8:00.</span>
                         </div>
                         <div className="font-mono text-sm tracking-widest">+2 500 ₽/день</div>
                      </label>
                      <label className="flex items-start gap-4 p-6 border border-zinc-200 bg-white cursor-pointer hover:border-black transition-colors group">
                         <Checkbox className="mt-1" id="service-2" />
                         <div className="flex-1">
-                           <Label htmlFor="service-2" className="text-sm cursor-pointer group-hover:text-black">Доступ к Spa-структуре</Label>
-                           <span className="block text-xs font-light text-zinc-500 mt-2">Безлимитный доступ к термальным зонам.</span>
+                           <Label htmlFor="service-2" className="text-sm cursor-pointer group-hover:text-black">SPA-зона</Label>
+                           <span className="block text-xs font-light text-zinc-500 mt-2">Неограниченный доступ к бассейну и сауне на весь срок проживания.</span>
                         </div>
                         <div className="font-mono text-sm tracking-widest">+5 000 ₽/весь период</div>
                      </label>
@@ -300,14 +300,14 @@ export function EditBooking() {
                {/* Special Requests */}
                <section>
                   <h2 className="text-xl tracking-widest uppercase border-b border-zinc-200 pb-4 mb-6">Особые запросы</h2>
-                  <textarea className="w-full border border-zinc-200 p-6 font-sans outline-none text-sm focus:border-black transition-colors min-h-[150px] resize-y bg-stone-light focus:bg-white" placeholder="Укажите любые структурные или диетические требования..."></textarea>
-                  <Button className="mt-4">Сохранить комментарий</Button>
+                  <textarea className="w-full border border-zinc-200 p-6 font-sans outline-none text-sm focus:border-black transition-colors min-h-[150px] resize-y bg-stone-light focus:bg-white" placeholder="Например: поздний заезд, детская кроватка, питание без глютена…"></textarea>
+                  <Button className="mt-4">Сохранить пожелания</Button>
                </section>
 
                {/* Danger Zone */}
                <section className="pt-12 border-t border-zinc-200 mt-12">
                   <Button variant="destructive" size="lg">
-                     Аннулировать бронирование
+                     Отменить бронирование
                   </Button>
                </section>
             </div>
@@ -315,12 +315,12 @@ export function EditBooking() {
             {/* Receipt Summary Sidebar */}
             <div className="lg:col-span-1">
                <div className="border border-black p-8 bg-stone-light sticky top-24">
-                  <h2 className="text-lg tracking-widest uppercase mb-6 font-bold text-center">Ось роскоши</h2>
+                  <h2 className="text-lg tracking-widest uppercase mb-6 font-bold text-center">Люкс</h2>
                   <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=400&auto=format&fit=crop" alt="Room" className="w-full h-40 object-cover mb-8 grayscale" />
                   
                   <div className="space-y-4 font-mono text-sm tracking-widest border-b border-zinc-300 pb-6 mb-6">
                      <div className="flex justify-between">
-                        <span className="text-zinc-500 font-sans uppercase text-xs">Базовый тариф</span>
+                        <span className="text-zinc-500 font-sans uppercase text-xs">Проживание</span>
                         <span>45 000 ₽</span>
                      </div>
                      <div className="flex justify-between">
@@ -339,7 +339,7 @@ export function EditBooking() {
                   </div>
 
                   <Button className="w-full">
-                     Обновить конфигурацию
+                     Сохранить изменения
                   </Button>
                </div>
             </div>

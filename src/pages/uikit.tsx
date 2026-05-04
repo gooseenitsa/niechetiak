@@ -12,7 +12,7 @@ export function UIKit() {
       <div className="mb-16">
         <h1 className="text-4xl tracking-widest mb-4 uppercase">UI Kit & Дизайн Система</h1>
         <p className="text-zinc-500 font-light text-sm uppercase tracking-widest">
-          Структурированная библиотека React-компонентов
+          Компоненты интерфейса сайта отеля
         </p>
       </div>
 
@@ -67,7 +67,7 @@ export function UIKit() {
           </div>
           <div className="border-l-2 border-zinc-300 pl-6">
             <p className="text-zinc-600 font-light leading-relaxed max-w-2xl text-sm md:text-base mb-4 font-sans">
-              Основной абзац. Inter, Light (300). Используется для больших объемов текста. Модернистский подход требует большого "воздуха" между строками (line-height: relaxed) и легкого начертания для чистоты формы. Выравнивание строго по левому краю или центрировано при абсолютной симметрии.
+              Основной текст для описаний номеров, услуг и отеля. Лёгкий шрифт, удобный межстрочный интервал и нейтральный цвет для спокойного чтения на белом и светло-сером фоне.
             </p>
             <p className="font-mono text-[10px] text-zinc-500 bg-stone-light p-2 inline-block border border-zinc-200">
               Font-family: Inter | Weight: Light (300) / Regular (400) | Line-height: 1.625 (relaxed) | Color: #52525B
@@ -131,7 +131,7 @@ export function UIKit() {
             </div>
             <div className="space-y-4">
               <div className="space-y-2">
-                <Label htmlFor="password-input">Пароль (Disabled)</Label>
+                <Label htmlFor="password-input">Пароль (недоступно)</Label>
                 <Input id="password-input" type="password" disabled value="password123" />
               </div>
             </div>
@@ -153,7 +153,7 @@ export function UIKit() {
 
               <div className="flex items-center space-x-4 p-4 border border-zinc-200 bg-stone-light opacity-70">
                 <Checkbox id="disabled-check" disabled />
-                <Label htmlFor="disabled-check" className="cursor-pointer">Неактивный чекбокс</Label>
+                <Label htmlFor="disabled-check" className="cursor-pointer">Недоступный вариант</Label>
               </div>
 
             </div>
@@ -172,7 +172,7 @@ export function UIKit() {
           </div>
           <div className="flex flex-col gap-2">
             <span className="text-[10px] uppercase tracking-widest text-zinc-500 font-bold mb-1">Secondary</span>
-            <Badge variant="secondary">Архив</Badge>
+            <Badge variant="secondary">Завершено</Badge>
           </div>
           <div className="flex flex-col gap-2">
             <span className="text-[10px] uppercase tracking-widest text-zinc-500 font-bold mb-1">Destructive</span>
@@ -198,11 +198,11 @@ export function UIKit() {
           
           {/* Form Card Example */}
           <div>
-            <h3 className="text-xs uppercase tracking-widest font-bold text-zinc-500 mb-4 font-sans">Auth/Form Card</h3>
+            <h3 className="text-xs uppercase tracking-widest font-bold text-zinc-500 mb-4 font-sans">Форма входа</h3>
             <Card className="w-full">
               <CardHeader>
-                <CardTitle>Доступ к сетке</CardTitle>
-                <CardDescription className="uppercase tracking-widest mt-2">Введите учетные координаты.</CardDescription>
+                <CardTitle>Вход в аккаунт</CardTitle>
+                <CardDescription className="uppercase tracking-widest mt-2">Введите email и пароль.</CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="space-y-2 flex flex-col">
@@ -215,14 +215,14 @@ export function UIKit() {
                 </div>
               </CardContent>
               <CardFooter className="flex-col gap-4 border-none pt-2">
-                <Button className="w-full">Инициализировать сессию</Button>
+                <Button className="w-full">Войти</Button>
               </CardFooter>
             </Card>
           </div>
 
           {/* Payment Card Example */}
           <div>
-            <h3 className="text-xs uppercase tracking-widest font-bold text-zinc-500 mb-4 font-sans">Data/List Card</h3>
+            <h3 className="text-xs uppercase tracking-widest font-bold text-zinc-500 mb-4 font-sans">Карта оплаты</h3>
             <div className="border border-zinc-200 p-6 flex flex-col sm:flex-row justify-between items-center bg-white shadow-sm">
               <div className="flex items-center gap-4 mb-4 sm:mb-0">
                 <div className="bg-stone-light p-3 border border-zinc-200">

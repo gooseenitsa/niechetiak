@@ -62,7 +62,7 @@ export default function Layout() {
               </Link>
             ))}
             <Link to="/booking" className="bg-black text-white px-4 lg:px-6 py-3 text-[10px] lg:text-xs uppercase tracking-widest hover:bg-gold transition-strict font-semibold">
-              Бронь
+              Забронировать
             </Link>
           </div>
           
@@ -88,7 +88,7 @@ export default function Layout() {
               NIECHE TIAK
             </Link>
             <p className="text-zinc-400 text-sm max-w-xs text-center md:text-left mt-4 font-light">
-              Модернистская архитектура и бескомпромиссный сервис в самом сердце абсолютной симметрии.
+              Отель в центре города: комфортные номера, ресторан, SPA и внимание к каждому гостю.
             </p>
           </div>
           
@@ -104,8 +104,8 @@ export default function Layout() {
             <div className="flex flex-col space-y-3">
               <span className="text-gold text-xs tracking-widest uppercase mb-2">Информация</span>
               <a href="#" className="text-sm text-zinc-300 hover:text-white transition-strict">Конфиденциальность</a>
-              <a href="#" className="text-sm text-zinc-300 hover:text-white transition-strict">Условия сервиса</a>
-              <Link to="/account" className="text-sm text-zinc-300 hover:text-white transition-strict mt-4 block">Аккаунт</Link>
+              <a href="#" className="text-sm text-zinc-300 hover:text-white transition-strict">Правила проживания</a>
+              <Link to="/account" className="text-sm text-zinc-300 hover:text-white transition-strict mt-4 block">Личный кабинет</Link>
             </div>
           </div>
           
@@ -119,7 +119,7 @@ export default function Layout() {
         </div>
         
         <div className="grid-container mt-8 text-center text-xs text-zinc-600 uppercase tracking-widest">
-          &copy; {new Date().getFullYear()} Nieche Tiak. Все права строго защищены.
+          &copy; {new Date().getFullYear()} Nieche Tiak. Все права защищены.
         </div>
       </footer>
     </div>
