@@ -6,9 +6,11 @@ export default function Layout() {
 
   const navLinks = [
     { name: "Номера", path: "/rooms" },
+    { name: "Ресторан", path: "/dining" },
     { name: "Услуги", path: "/services" },
     { name: "Галерея", path: "/gallery" },
     { name: "Акции", path: "/offers" },
+    { name: "FAQ", path: "/faq" },
     { name: "О нас", path: "/about" },
     { name: "UI Kit", path: "/ui-kit" },
   ];
@@ -28,7 +30,7 @@ export default function Layout() {
       <header className="bg-white border-b border-black sticky top-0 z-50">
         <div className="grid-container flex items-center justify-between h-20">
           <div className="flex-1 hidden md:flex items-center gap-6 lg:gap-8">
-            {navLinks.slice(0, 3).map((link) => (
+            {navLinks.slice(0, 4).map((link) => (
               <Link
                 key={link.name}
                 to={link.path}
@@ -47,7 +49,7 @@ export default function Layout() {
           </Link>
           
           <div className="flex-1 hidden md:flex items-center justify-end gap-6 lg:gap-8">
-             {navLinks.slice(3).map((link) => (
+             {navLinks.slice(4).map((link) => (
               <Link
                 key={link.name}
                 to={link.path}

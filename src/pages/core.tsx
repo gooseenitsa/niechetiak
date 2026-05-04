@@ -1,4 +1,6 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { Plus, Minus } from "lucide-react";
+import { useState } from "react";
 
 export function Home() {
   return (
@@ -183,6 +185,71 @@ export function NotFound() {
         </Link>
         <Link to="/rooms" className="w-full sm:w-auto bg-black text-white px-8 py-4 text-sm uppercase tracking-widest hover:bg-gold transition-strict font-semibold">
           В каталог
+        </Link>
+      </div>
+    </div>
+  );
+}
+
+export function FAQ() {
+  const faqs = [
+    {
+      q: "Каковы правила отмены бронирования?",
+      a: "Аннулирование без штрафа возможно за 72 часа до времени заезда (14:00). При поздней отмене удерживается стоимость одной ночи."
+    },
+    {
+      q: "Предоставляете ли вы трансфер из аэропорта?",
+      a: "Да, мы предоставляем симметричный трансфер на премиальных автомобилях. Требуется предварительное уведомление за 24 часа."
+    },
+    {
+      q: "Допускается ли размещение с домашними животными?",
+      a: "В целях поддержания гипоаллергенной среды и структурной чистоты, размещение с животными не предусмотрено."
+    },
+    {
+      q: "Есть ли дресс-код в ресторане 'Симметричная кухня'?",
+      a: "Мы приветствуем стиль smart casual. Минималистичный и элегантный внешний вид идеально дополняет атмосферу."
+    },
+    {
+      q: "Какие часы работы Spa-структуры?",
+      a: "Термальные зоны и фитнес-куб открыты ежедневно с 06:00 до 23:00. Индивидуальные процедуры требуют предварительной записи."
+    }
+  ];
+
+  const [openIdx, setOpenIdx] = useState<number | null>(0);
+
+  return (
+    <div className="grid-container py-16 min-h-[80vh] max-w-4xl mx-auto">
+      <h1 className="text-4xl tracking-widest text-center mb-6 uppercase">Протокол Частых Вопросов</h1>
+      <p className="text-center font-light text-zinc-500 mb-16 text-sm md:text-base">Стандартизированные ответы для оптимизации вашего времени.</p>
+
+      <div className="space-y-4">
+        {faqs.map((faq, idx) => (
+          <div key={idx} className="border border-zinc-200 bg-white">
+            <button 
+              className="w-full flex items-center justify-between p-6 text-left hover:bg-stone-light transition-colors"
+              onClick={() => setOpenIdx(openIdx === idx ? null : idx)}
+            >
+              <h3 className="text-sm tracking-widest uppercase font-bold pr-8">{faq.q}</h3>
+              <div className="text-zinc-400 shrink-0">
+                {openIdx === idx ? <Minus className="w-5 h-5" /> : <Plus className="w-5 h-5" />}
+              </div>
+            </button>
+            <div 
+              className={`overflow-hidden transition-all duration-500 ease-in-out ${openIdx === idx ? 'max-h-48 border-t border-zinc-200' : 'max-h-0'}`}
+            >
+              <div className="p-6 bg-stone-light font-light text-zinc-600 text-sm leading-relaxed">
+                {faq.a}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div className="mt-16 text-center border-t border-black pt-12">
+        <h3 className="text-xl tracking-widest uppercase mb-4">Остались вопросы?</h3>
+        <p className="text-zinc-500 font-light mb-8">Наш персонал готов предоставить точную информацию в любое время.</p>
+        <Link to="/about" className="border border-black px-8 py-4 uppercase text-xs tracking-widest hover:bg-black hover:text-white transition-strict font-bold">
+          Связаться с нами
         </Link>
       </div>
     </div>

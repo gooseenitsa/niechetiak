@@ -27,9 +27,24 @@ export function Services() {
 }
 
 export function Gallery() {
+  const images = [
+    { url: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b", category: "Экстерьер", span: "md:col-span-2 md:row-span-2" },
+    { url: "https://images.unsplash.com/photo-1542314831-c6a4d14b03cc", category: "Интерьеры", span: "md:col-span-1 md:row-span-1" },
+    { url: "https://images.unsplash.com/photo-1618773928121-c32242e63f39", category: "Интерьеры", span: "md:col-span-1 md:row-span-1" },
+    { url: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4", category: "Детали", span: "md:col-span-1 md:row-span-2" },
+    { url: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874", category: "Интерьеры", span: "md:col-span-2 md:row-span-1" },
+    { url: "https://images.unsplash.com/photo-1590490360182-c33d57733427", category: "Интерьеры", span: "md:col-span-1 md:row-span-1" },
+    { url: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3", category: "Экстерьер", span: "md:col-span-2 md:row-span-2" },
+    { url: "https://images.unsplash.com/photo-1631049307264-da0ec9d70304", category: "Детали", span: "md:col-span-1 md:row-span-1" },
+    { url: "https://images.unsplash.com/photo-1513694203232-719a280e022f", category: "Интерьеры", span: "md:col-span-1 md:row-span-1" },
+    { url: "https://images.unsplash.com/photo-1596394516093-501ba68a0ba6", category: "Детали", span: "md:col-span-2 md:row-span-1" }
+  ];
+
   return (
     <div className="grid-container py-16">
-       <h1 className="text-4xl tracking-widest text-center mb-12 uppercase">Визуальные записи</h1>
+       <h1 className="text-4xl tracking-widest text-center mb-6 uppercase">Визуальные записи</h1>
+       <p className="text-center font-light text-zinc-500 mb-12 text-sm md:text-base">Архитектурная чистота и симметрия в каждой детали.</p>
+       
        <div className="flex justify-center gap-2 md:gap-4 mb-12 flex-wrap">
           <button className="border border-black px-4 md:px-6 py-2 text-[10px] md:text-xs uppercase tracking-widest bg-black text-white font-semibold">Все</button>
           <button className="border border-black px-4 md:px-6 py-2 text-[10px] md:text-xs uppercase tracking-widest hover:bg-zinc-100 transition-colors bg-white">Экстерьер</button>
@@ -37,22 +52,20 @@ export function Gallery() {
           <button className="border border-black px-4 md:px-6 py-2 text-[10px] md:text-xs uppercase tracking-widest hover:bg-zinc-100 transition-colors bg-white">Детали</button>
        </div>
        
-       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4">
-          {[
-            "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b",
-            "https://images.unsplash.com/photo-1542314831-c6a4d14b03cc",
-            "https://images.unsplash.com/photo-1618773928121-c32242e63f39",
-            "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4",
-            "https://images.unsplash.com/photo-1544161515-4ab6ce6db874",
-            "https://images.unsplash.com/photo-1590490360182-c33d57733427",
-            "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3",
-            "https://images.unsplash.com/photo-1631049307264-da0ec9d70304"
-          ].map((url, i) => (
-             <div key={i} className="aspect-square overflow-hidden bg-zinc-100 group border border-zinc-200 relative">
-                <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent z-10 transition-colors"></div>
-                <img src={`${url}?q=80&w=600&auto=format&fit=crop`} className="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:scale-110 group-hover:opacity-100 transition-all duration-700 cursor-pointer" />
+       <div className="grid grid-cols-1 md:grid-cols-4 gap-4 auto-rows-[250px]">
+          {images.map((img, i) => (
+             <div key={i} className={`overflow-hidden bg-zinc-100 group border border-zinc-200 relative ${img.span}`}>
+                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/0 z-10 transition-colors duration-500"></div>
+                <img src={`${img.url}?q=80&w=800&auto=format&fit=crop`} className="w-full h-full object-cover grayscale opacity-90 group-hover:grayscale-0 group-hover:scale-105 group-hover:opacity-100 transition-all duration-700 cursor-pointer" />
+                <div className="absolute bottom-0 left-0 p-4 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  <span className="bg-white text-black px-3 py-1 text-[10px] uppercase tracking-widest font-bold">{img.category}</span>
+                </div>
              </div>
           ))}
+       </div>
+       
+       <div className="mt-16 flex justify-center">
+          <button className="border border-black px-8 py-4 uppercase text-xs tracking-widest hover:bg-black hover:text-white transition-strict">Загрузить еще</button>
        </div>
     </div>
   );
@@ -84,6 +97,44 @@ export function Offers() {
             </div>
           ))}
        </div>
+    </div>
+  );
+}
+
+export function Dining() {
+  const menu = [
+    { name: "Сферический Тартар", desc: "Идеальная сфера из свежайшего тунца с эмульсией.", price: "2 400 ₽" },
+    { name: "Кубический Стейк", desc: "Говядина су-вид, нарезанная точными кубами, с линейным пюре.", price: "4 200 ₽" },
+    { name: "Линейный Десерт", desc: "Шоколадный ганаш в форме идеального параллелепипеда.", price: "1 100 ₽" },
+  ];
+
+  return (
+    <div className="grid-container py-16">
+      <h1 className="text-4xl tracking-widest text-center mb-6 uppercase">Гастрономическая Геометрия</h1>
+      <p className="text-center font-light text-zinc-500 mb-16 max-w-2xl mx-auto text-sm md:text-base">Наш ресторан возводит кулинарию в ранг точной науки. Форма и содержание находятся в идеальном балансе.</p>
+
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-24">
+        <div className="border border-black p-2 bg-white">
+          <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=800&auto=format&fit=crop" alt="Restaurant interior" className="w-full h-[500px] object-cover grayscale hover:grayscale-0 transition-strict duration-700" />
+        </div>
+        <div className="space-y-8">
+          <h2 className="text-2xl tracking-widest uppercase border-b border-black pb-4">Меню</h2>
+          <div className="space-y-6">
+            {menu.map((item, i) => (
+              <div key={i} className="flex flex-col sm:flex-row sm:items-baseline justify-between border-b border-zinc-200 pb-6 group hover:border-black transition-colors">
+                <div className="mb-2 sm:mb-0 max-w-md">
+                  <h3 className="text-lg tracking-widest uppercase font-bold mb-1 group-hover:text-gold transition-colors">{item.name}</h3>
+                  <p className="text-sm font-light text-zinc-500">{item.desc}</p>
+                </div>
+                <div className="font-mono text-lg tracking-widest text-black">{item.price}</div>
+              </div>
+            ))}
+          </div>
+          <button className="bg-black text-white px-8 py-4 uppercase text-xs tracking-widest font-bold hover:bg-gold transition-strict mt-4">
+            Резерв стола
+          </button>
+        </div>
+      </div>
     </div>
   );
 }
