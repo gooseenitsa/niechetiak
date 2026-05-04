@@ -1,35 +1,45 @@
 import { Link, useNavigate } from "react-router-dom";
 import { CreditCard, Plus, Trash2, ArrowLeft, Calendar, User, Clock, CheckCircle } from "lucide-react";
+import { Button } from "../components/ui/button";
+import { Input } from "../components/ui/input";
+import { Label } from "../components/ui/label";
+import { Checkbox } from "../components/ui/checkbox";
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "../components/ui/card";
+import { Badge } from "../components/ui/badge";
 
 export function Login() {
    return (
       <div className="min-h-[80vh] flex items-center justify-center py-16 px-4">
-         <div className="border border-black p-8 md:p-12 bg-white w-full max-w-md shadow-2xl">
-            <h1 className="text-3xl tracking-widest text-center mb-2 uppercase">Доступ к сетке</h1>
-            <p className="text-center font-light text-zinc-500 mb-10 text-xs md:text-sm uppercase tracking-widest">Введите учетные координаты.</p>
+         <Card className="w-full max-w-md shadow-2xl p-4 md:p-8">
+            <CardHeader className="border-b-0 pb-0 items-center text-center mb-10">
+               <CardTitle>Доступ к сетке</CardTitle>
+               <CardDescription className="uppercase tracking-widest text-xs md:text-sm mt-2">Введите учетные координаты.</CardDescription>
+            </CardHeader>
+            <CardContent>
+               <form className="space-y-6">
+                  <div className="space-y-2 flex flex-col">
+                     <Label>Email</Label>
+                     <Input type="email" />
+                  </div>
+                  <div className="space-y-2 flex flex-col">
+                     <div className="flex justify-between items-center">
+                        <Label>Пароль</Label>
+                        <a href="#" className="text-xs text-gold hover:underline">Восстановить</a>
+                     </div>
+                     <Input type="password" />
+                  </div>
 
-            <form className="space-y-6">
-               <div className="flex flex-col">
-                  <label className="text-xs uppercase tracking-widest text-zinc-500 mb-2 font-bold">Email</label>
-                  <input type="email" className="p-4 border border-zinc-300 focus:border-black outline-none font-sans transition-colors bg-stone-light focus:bg-white" />
+                  <Button className="w-full mt-4">
+                     Инициализировать сессию
+                  </Button>
+               </form>
+            </CardContent>
+            <CardFooter className="pt-8 border-t border-zinc-200 justify-center">
+               <div className="text-[10px] md:text-xs uppercase tracking-widest text-zinc-500">
+                  Нет профиля? <Link to="/signup" className="text-black font-bold ml-2">Сформировать</Link>
                </div>
-               <div className="flex flex-col">
-                  <label className="text-xs uppercase tracking-widest text-zinc-500 mb-2 flex justify-between font-bold">
-                     Пароль
-                     <a href="#" className="text-gold hover:underline">Восстановить</a>
-                  </label>
-                  <input type="password" className="p-4 border border-zinc-300 focus:border-black outline-none font-sans transition-colors bg-stone-light focus:bg-white" />
-               </div>
-
-               <button className="w-full bg-black text-white py-5 uppercase tracking-widest text-xs hover:bg-gold transition-strict font-bold pt-5 shadow-md">
-                  Инициализировать сессию
-               </button>
-            </form>
-
-            <div className="mt-10 pt-8 border-t border-zinc-200 text-center text-[10px] md:text-xs uppercase tracking-widest text-zinc-500">
-               Нет профиля? <Link to="/signup" className="text-black font-bold ml-2">Сформировать</Link>
-            </div>
-         </div>
+            </CardFooter>
+         </Card>
       </div>
    );
 }
@@ -37,39 +47,43 @@ export function Login() {
 export function Signup() {
    return (
       <div className="min-h-[80vh] flex items-center justify-center py-16 px-4">
-         <div className="border border-black p-8 md:p-12 bg-white w-full max-w-xl shadow-2xl">
-            <h1 className="text-3xl tracking-widest text-center mb-2 uppercase">Конструкт лояльности</h1>
-            <p className="text-center font-light text-zinc-500 mb-10 text-xs md:text-sm uppercase tracking-widest">Создайте новый массив идентичности.</p>
-
-            <form className="space-y-6">
-               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  <div className="flex flex-col">
-                     <label className="text-xs uppercase tracking-widest text-zinc-500 mb-2 font-bold">Имя</label>
-                     <input className="p-4 border border-zinc-300 focus:border-black outline-none font-sans transition-colors bg-stone-light focus:bg-white" />
+         <Card className="w-full max-w-xl shadow-2xl p-4 md:p-8">
+            <CardHeader className="border-b-0 pb-0 items-center text-center mb-10">
+               <CardTitle>Конструкт лояльности</CardTitle>
+               <CardDescription className="uppercase tracking-widest text-xs md:text-sm mt-2">Создайте новый массив идентичности.</CardDescription>
+            </CardHeader>
+            <CardContent>
+               <form className="space-y-6">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                     <div className="space-y-2 flex flex-col">
+                        <Label>Имя</Label>
+                        <Input />
+                     </div>
+                     <div className="space-y-2 flex flex-col">
+                        <Label>Фамилия</Label>
+                        <Input />
+                     </div>
                   </div>
-                  <div className="flex flex-col">
-                     <label className="text-xs uppercase tracking-widest text-zinc-500 mb-2 font-bold">Фамилия</label>
-                     <input className="p-4 border border-zinc-300 focus:border-black outline-none font-sans transition-colors bg-stone-light focus:bg-white" />
+                  <div className="space-y-2 flex flex-col">
+                     <Label>Email</Label>
+                     <Input type="email" />
                   </div>
-               </div>
-               <div className="flex flex-col">
-                  <label className="text-xs uppercase tracking-widest text-zinc-500 mb-2 font-bold">Email</label>
-                  <input type="email" className="p-4 border border-zinc-300 focus:border-black outline-none font-sans transition-colors bg-stone-light focus:bg-white" />
-               </div>
-               <div className="flex flex-col">
-                  <label className="text-xs uppercase tracking-widest text-zinc-500 mb-2 font-bold">Ключ безопасности (Пароль)</label>
-                  <input type="password" className="p-4 border border-zinc-300 focus:border-black outline-none font-sans transition-colors bg-stone-light focus:bg-white" />
-               </div>
+                  <div className="space-y-2 flex flex-col">
+                     <Label>Ключ безопасности (Пароль)</Label>
+                     <Input type="password" />
+                  </div>
 
-               <button className="w-full bg-black text-white py-5 uppercase tracking-widest text-xs hover:bg-gold transition-strict font-bold shadow-md mt-4">
-                  Создать профиль
-               </button>
-            </form>
-
-            <div className="mt-10 pt-8 border-t border-zinc-200 text-center text-[10px] md:text-xs uppercase tracking-widest text-zinc-500">
-               Профиль существует? <Link to="/login" className="text-black font-bold ml-2">Войти</Link>
-            </div>
-         </div>
+                  <Button className="w-full mt-4">
+                     Создать профиль
+                  </Button>
+               </form>
+            </CardContent>
+            <CardFooter className="pt-8 border-t border-zinc-200 justify-center">
+               <div className="text-[10px] md:text-xs uppercase tracking-widest text-zinc-500">
+                  Профиль существует? <Link to="/login" className="text-black font-bold ml-2">Войти</Link>
+               </div>
+            </CardFooter>
+         </Card>
       </div>
    );
 }
@@ -83,10 +97,10 @@ export function Account() {
          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             {/* Sidebar */}
             <div className="col-span-1 space-y-3 font-sans text-xs font-bold uppercase tracking-widest sticky top-24 h-fit">
-               <a href="#history" className="block w-full text-left p-4 md:p-5 border border-zinc-200 hover:border-black text-zinc-600 hover:text-black transition-strict bg-white">История и логи</a>
-               <a href="#profile" className="block w-full text-left p-4 md:p-5 border border-zinc-200 hover:border-black text-zinc-600 hover:text-black transition-strict bg-white">Настройки профиля</a>
-               <a href="#payment" className="block w-full text-left p-4 md:p-5 border border-zinc-200 hover:border-black text-zinc-600 hover:text-black transition-strict bg-white">Методы оплаты</a>
-               <button className="w-full text-left p-4 md:p-5 border border-zinc-200 hover:text-red-500 transition-strict mt-12 bg-white font-medium">Прервать сессию (Выйти)</button>
+               <a href="#history" className="block w-full text-left p-4 md:p-5 border border-zinc-200 hover:border-black text-zinc-600 hover:text-black transition-all bg-white">История и логи</a>
+               <a href="#profile" className="block w-full text-left p-4 md:p-5 border border-zinc-200 hover:border-black text-zinc-600 hover:text-black transition-all bg-white">Настройки профиля</a>
+               <a href="#payment" className="block w-full text-left p-4 md:p-5 border border-zinc-200 hover:border-black text-zinc-600 hover:text-black transition-all bg-white">Методы оплаты</a>
+               <button className="w-full text-left p-4 md:p-5 border border-zinc-200 hover:text-red-500 transition-all mt-12 bg-white font-medium">Прервать сессию (Выйти)</button>
             </div>
 
             {/* Main Panel */}
@@ -109,7 +123,7 @@ export function Account() {
                   <div>
                      <h2 className="text-xl tracking-widest border-b border-zinc-200 pb-4 mb-6 uppercase">Запланированные визиты</h2>
 
-                     <div className="border border-zinc-200 p-6 flex flex-col sm:flex-row justify-between items-center hover:border-black transition-strict bg-white shadow-sm hover:shadow-md">
+                     <div className="border border-zinc-200 p-6 flex flex-col sm:flex-row justify-between items-center hover:border-black transition-all bg-white shadow-sm hover:shadow-md">
                         <div className="flex flex-col sm:flex-row items-center sm:gap-8 mb-6 sm:mb-0 w-full text-center sm:text-left">
                            <div className="bg-black text-white p-4 text-center aspect-square flex flex-col justify-center min-w-[80px] w-20 mb-4 sm:mb-0 mx-auto sm:mx-0 shadow-inner">
                               <span className="text-[10px] uppercase tracking-widest">Окт</span>
@@ -120,9 +134,13 @@ export function Account() {
                               <p className="text-xs text-zinc-500 font-mono tracking-widest">Подтверждение: #NT-88902A</p>
                            </div>
                         </div>
-                        <button onClick={() => navigate('/account/booking/NT-88902A')} className="w-full sm:w-auto border border-black px-8 py-3 uppercase text-[10px] font-bold tracking-widest hover:bg-black hover:text-white transition-strict whitespace-nowrap bg-white">
+                        <Button 
+                           variant="outline" 
+                           onClick={() => navigate('/account/booking/NT-88902A')} 
+                           className="w-full sm:w-auto px-8 py-3 whitespace-nowrap"
+                        >
                            Модулировать
-                        </button>
+                        </Button>
                      </div>
                   </div>
                </div>
@@ -132,27 +150,27 @@ export function Account() {
                   <h2 className="text-xl tracking-widest border-b border-zinc-200 pb-4 mb-6 uppercase">Настройки профиля</h2>
                   <form className="space-y-8 bg-white border border-zinc-200 p-8 shadow-sm">
                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                        <div className="flex flex-col">
-                          <label className="text-xs uppercase tracking-widest text-zinc-500 mb-2 font-bold">Имя</label>
-                          <input defaultValue="Алекс" className="p-4 border border-zinc-300 focus:border-black outline-none font-sans transition-colors bg-stone-light focus:bg-white" />
+                        <div className="space-y-2 flex flex-col">
+                          <Label>Имя</Label>
+                          <Input defaultValue="Алекс" />
                         </div>
-                        <div className="flex flex-col">
-                          <label className="text-xs uppercase tracking-widest text-zinc-500 mb-2 font-bold">Фамилия</label>
-                          <input defaultValue="Мерсер" className="p-4 border border-zinc-300 focus:border-black outline-none font-sans transition-colors bg-stone-light focus:bg-white" />
+                        <div className="space-y-2 flex flex-col">
+                          <Label>Фамилия</Label>
+                          <Input defaultValue="Мерсер" />
                         </div>
                      </div>
-                     <div className="flex flex-col">
-                       <label className="text-xs uppercase tracking-widest text-zinc-500 mb-2 font-bold">Email</label>
-                       <input type="email" defaultValue="alex.mercer@example.com" className="p-4 border border-zinc-300 focus:border-black outline-none font-sans transition-colors bg-stone-light focus:bg-white" />
+                     <div className="space-y-2 flex flex-col">
+                       <Label>Email</Label>
+                       <Input type="email" defaultValue="alex.mercer@example.com" />
                      </div>
-                     <div className="flex flex-col">
-                       <label className="text-xs uppercase tracking-widest text-zinc-500 mb-2 font-bold">Телефон</label>
-                       <input type="tel" defaultValue="+7 (999) 123-45-67" className="p-4 border border-zinc-300 focus:border-black outline-none font-sans transition-colors bg-stone-light focus:bg-white" />
+                     <div className="space-y-2 flex flex-col">
+                       <Label>Телефон</Label>
+                       <Input type="tel" defaultValue="+7 (999) 123-45-67" />
                      </div>
                      <div className="pt-4">
-                        <button type="button" className="bg-black text-white px-8 py-4 uppercase tracking-widest text-xs hover:bg-gold transition-strict font-bold shadow-md">
+                        <Button type="button">
                            Сохранить изменения
-                        </button>
+                        </Button>
                      </div>
                   </form>
                </div>
@@ -169,11 +187,14 @@ export function Account() {
                               <CreditCard className="w-6 h-6 text-black" />
                            </div>
                            <div>
-                              <h4 className="font-bold tracking-widest uppercase text-sm">Visa заканчивается на 4242</h4>
-                              <p className="text-xs text-zinc-500 font-mono tracking-widest mt-1">Истекает 12/28 • Основной</p>
+                              <div className="flex items-center gap-3 mb-1">
+                                 <h4 className="font-bold tracking-widest uppercase text-sm">Visa заканчивается на 4242</h4>
+                                 <Badge>Основной</Badge>
+                              </div>
+                              <p className="text-xs text-zinc-500 font-mono tracking-widest">Истекает 12/28</p>
                            </div>
                         </div>
-                        <button className="text-zinc-400 hover:text-red-500 transition-strict p-2">
+                        <button className="text-zinc-400 hover:text-red-500 transition-all p-2">
                            <Trash2 className="w-5 h-5" />
                         </button>
                      </div>
@@ -189,16 +210,16 @@ export function Account() {
                               <p className="text-xs text-zinc-500 font-mono tracking-widest mt-1">Истекает 09/27</p>
                            </div>
                         </div>
-                        <button className="text-zinc-400 hover:text-red-500 transition-strict p-2">
+                        <button className="text-zinc-400 hover:text-red-500 transition-all p-2">
                            <Trash2 className="w-5 h-5" />
                         </button>
                      </div>
                   </div>
 
-                  <button className="flex items-center gap-3 border border-dashed border-zinc-400 p-6 w-full justify-center text-zinc-500 hover:text-black hover:border-black transition-strict uppercase tracking-widest font-bold text-xs bg-stone-light hover:bg-white">
+                  <Button variant="secondary" className="w-full flex items-center gap-3 border-dashed h-16 text-zinc-500">
                      <Plus className="w-5 h-5" />
                      Добавить новый метод
-                  </button>
+                  </Button>
                </div>
 
             </div>
@@ -221,9 +242,9 @@ export function EditBooking() {
                <h1 className="text-3xl md:text-4xl tracking-widest uppercase">Модуляция брони</h1>
                <p className="text-zinc-500 mt-2 font-mono tracking-widest text-sm uppercase">#NT-88902A</p>
             </div>
-            <div className="bg-black text-white px-4 py-2 uppercase tracking-widest text-[10px] font-bold flex items-center gap-2">
+            <Badge variant="default" className="gap-2 h-8 px-4 text-[10px]">
                <CheckCircle className="w-3 h-3 text-gold" /> Подтверждено
-            </div>
+            </Badge>
          </div>
 
          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
@@ -257,19 +278,19 @@ export function EditBooking() {
                <section>
                   <h2 className="text-xl tracking-widest uppercase border-b border-zinc-200 pb-4 mb-6">Дополнительные модули</h2>
                   <div className="space-y-4">
-                     <label className="flex items-start gap-4 p-6 border border-zinc-200 bg-white cursor-pointer hover:border-black transition-colors">
-                        <input type="checkbox" className="mt-1 w-5 h-5 accent-black text-black border-zinc-300 rounded-none focus:ring-black" defaultChecked />
+                     <label className="flex items-start gap-4 p-6 border border-zinc-200 bg-white cursor-pointer hover:border-black transition-colors group">
+                        <Checkbox className="mt-1" defaultChecked id="service-1" />
                         <div className="flex-1">
-                           <span className="block text-sm uppercase tracking-widest font-bold">Геометрический Завтрак</span>
-                           <span className="block text-xs font-light text-zinc-500 mt-1">Ежедневная доставка в номер точно в 08:00.</span>
+                           <Label htmlFor="service-1" className="text-sm cursor-pointer group-hover:text-black">Геометрический Завтрак</Label>
+                           <span className="block text-xs font-light text-zinc-500 mt-2">Ежедневная доставка в номер точно в 08:00.</span>
                         </div>
                         <div className="font-mono text-sm tracking-widest">+2 500 ₽/день</div>
                      </label>
-                     <label className="flex items-start gap-4 p-6 border border-zinc-200 bg-white cursor-pointer hover:border-black transition-colors">
-                        <input type="checkbox" className="mt-1 w-5 h-5 accent-black text-black border-zinc-300 rounded-none focus:ring-black" />
+                     <label className="flex items-start gap-4 p-6 border border-zinc-200 bg-white cursor-pointer hover:border-black transition-colors group">
+                        <Checkbox className="mt-1" id="service-2" />
                         <div className="flex-1">
-                           <span className="block text-sm uppercase tracking-widest font-bold">Доступ к Spa-структуре</span>
-                           <span className="block text-xs font-light text-zinc-500 mt-1">Безлимитный доступ к термальным зонам.</span>
+                           <Label htmlFor="service-2" className="text-sm cursor-pointer group-hover:text-black">Доступ к Spa-структуре</Label>
+                           <span className="block text-xs font-light text-zinc-500 mt-2">Безлимитный доступ к термальным зонам.</span>
                         </div>
                         <div className="font-mono text-sm tracking-widest">+5 000 ₽/весь период</div>
                      </label>
@@ -280,12 +301,14 @@ export function EditBooking() {
                <section>
                   <h2 className="text-xl tracking-widest uppercase border-b border-zinc-200 pb-4 mb-6">Особые запросы</h2>
                   <textarea className="w-full border border-zinc-200 p-6 font-sans outline-none text-sm focus:border-black transition-colors min-h-[150px] resize-y bg-stone-light focus:bg-white" placeholder="Укажите любые структурные или диетические требования..."></textarea>
-                  <button className="bg-black text-white px-8 py-4 uppercase text-xs tracking-widest font-bold mt-4 hover:bg-gold transition-colors">Сохранить комментарий</button>
+                  <Button className="mt-4">Сохранить комментарий</Button>
                </section>
 
                {/* Danger Zone */}
                <section className="pt-12 border-t border-zinc-200 mt-12">
-                  <button className="text-red-500 uppercase tracking-widest font-bold text-xs border border-red-500 px-8 py-4 hover:bg-red-500 hover:text-white transition-colors">Аннулировать бронирование</button>
+                  <Button variant="destructive" size="lg">
+                     Аннулировать бронирование
+                  </Button>
                </section>
             </div>
 
@@ -315,9 +338,9 @@ export function EditBooking() {
                      <span className="font-mono">63 000 ₽</span>
                   </div>
 
-                  <button className="w-full bg-black text-white py-4 uppercase tracking-widest text-xs font-bold hover:bg-gold transition-colors">
+                  <Button className="w-full">
                      Обновить конфигурацию
-                  </button>
+                  </Button>
                </div>
             </div>
          </div>
